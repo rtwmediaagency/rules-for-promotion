@@ -40,13 +40,18 @@
             border-radius: 5px;
             padding: 8px 15px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: absolute;
             right: 20px;
         }
 
         .menu-button:hover {
             background: #ff6600;
+        }
+
+        .menu-button.active {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px 5px darkgoldenrod;
         }
 
         .menu {
@@ -171,7 +176,7 @@
     <!-- Header Section -->
     <div class="header">
         <img src="https://growwsociallps.github.io/rtwmediaagency.com/images/brandlogo2.png" alt="Logo" class="header-logo">
-        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+        <button class="menu-button" id="menuButton">Menu</button>
         <div class="menu" id="dropdownMenu">
             <a href="https://rtwmediaagency.com"><img src="https://i.ibb.co/gLsBZ1Rz/5974636.png" alt="Home Icon">Home</a>
             <a href="https://chat.whatsapp.com/Co1DEKlMcCt0Z0SHGn0T0P"><img src=https://i.ibb.co/YFM9hwYj/733585.png" alt="Home Icon">Join Group</a>
@@ -182,32 +187,32 @@
             <a href="https://developer9444.github.io/rules-for-promotion/"><img src="https://i.ibb.co/0VGjK5Cy/3251383.png" alt=" Rules Of Promotion Icon">Rules For Promotion</a>
         </div>
     </div>
-    
+
     <div class="container">
         <h2>MG Lion Promotion Guidelines</h2>
 
         <div class="term">
-            <span class="term-number">01</span>
+            <span class="term-number"></span>
             <strong>Brand:</strong> MG Lion
         </div>
 
         <div class="term">
-            <span class="term-number">02</span>
+            <span class="term-number"></span>
             <strong>Price:</strong> ₹750 per million views (for managers)
         </div>
 
         <div class="term">
-            <span class="term-number">03</span>
+            <span class="term-number"></span>
             <strong>Requirement:</strong> Organic, genuine views
         </div>
 
         <div class="term">
-            <span class="term-number">04</span>
+            <span class="term-number"></span>
             <strong>Allowed Categories:</strong> All (except cartoons, games, serials, gods, and animations)
         </div>
 
         <div class="term">
-            <span class="term-number">05</span>
+            <span class="term-number"></span>
             <strong>Languages:</strong> All
         </div>
 
@@ -300,10 +305,14 @@
 </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('dropdownMenu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-        }
+        const menuButton = document.getElementById('menuButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        menuButton.addEventListener('click', () => {
+            const isMenuOpen = dropdownMenu.style.display === 'flex';
+            menuButton.classList.toggle('active');
+            dropdownMenu.style.display = isMenuOpen ? 'none' : 'flex';
+        });
 
         const terms = document.querySelectorAll('.term');
 
