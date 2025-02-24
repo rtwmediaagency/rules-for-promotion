@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,6 +187,117 @@
             <a href="https://developer9444.github.io/rules-for-promotion/"><img src="https://i.ibb.co/0VGjK5Cy/3251383.png" alt=" Rules Of Promotion Icon">Rules For Promotion</a>
         </div>
     </div>
+
+<div class="container">
+    <div class="video-container">
+      <h2>Promotion Material</h2>
+        <video autoplay loop controls controlslist="nodownload nofullscreen noremoteplayback" style="width: 100%; border-radius: 25px; object-fit: cover;">
+            <source src="https://www.dropbox.com/scl/fi/f8apps7gjia4j5tump50j/Mg-Lion-watermark-16.mp4?rlkey=xl3o2wdxhac5vwt9ncfnntu1j&st=e488j1xo&raw=1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <a class="download-btn" href="https://www.dropbox.com/scl/fi/f8apps7gjia4j5tump50j/Mg-Lion-watermark-16.mp4?rlkey=xl3o2wdxhac5vwt9ncfnntu1j&st=e488j1xo&raw=1" download="video.mp4">Download File</a>
+    
+    <div class="copy-label">BIO HASHTAG</div>
+    <div class="copy-box">
+        <span class="copy-text" id="text1">#rtwmediaagency</span>
+        <button class="copy-btn" onclick="copyText('text1')">COPY</button>
+    </div>
+    <div class="copy-label">MANAGED BY</div>
+    <div class="copy-box">
+        <span class="copy-text" id="text2">"YOUR MEDIA NAME""</span>
+        <button class="copy-btn" onclick="copyText('text2')">COPY</button>
+    </div>
+    <div class="copy-label">BIO LINK</div>
+    <div class="copy-box">
+        <span class="copy-text" id="text3">www.mglion.com</span>
+        <button class="copy-btn" onclick="copyText('text3')">COPY</button>
+    </div>
+    <div class="copy-label">REELS CAPTION</div>
+<div class="copy-box">
+    <span class="copy-text" id="text4">#mglion<br>#rtwmediaagency<br>#mglionbet</span>
+    <button class="copy-btn" onclick="copyText('text4')">COPY</button>
+</div>
+
+    <span class="copy-message" id="copyMessage" style="display: none; opacity: 0; color: green; font-weight: bold;">Text copied successfully! 🎉</span>
+</div>
+<style>
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+        transition: 0.3s;
+        position: relative;
+        width: 90%;
+        max-width: 400px;
+        border: 2px solid rgba(255, 87, 34, 0.8);
+        animation: glow-border 1.5s infinite alternate;
+    }
+    @keyframes glow-border {
+        0% { box-shadow: 0px 0px 10px rgba(255, 87, 34, 0.5); }
+        100% { box-shadow: 0px 0px 25px rgba(255, 87, 34, 1); }
+    }
+    .copy-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 10px 0;
+        cursor: pointer;
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .copy-text {
+        flex-grow: 1;
+        text-align: left;
+    }
+    .copy-btn, .download-btn {
+        background: #ff5722;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+    .copy-btn:active::after, .download-btn:active::after {
+        opacity: 1;
+    }
+    .copy-box:hover, .download-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+    }
+    .copy-box.active {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 25px rgba(255, 87, 34, 0.9);
+    }
+</style>
+<script>
+    function copyText(textId) {
+        const text = document.getElementById(textId).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const message = document.getElementById("copyMessage");
+            message.style.display = "block";
+            message.style.opacity = "1";
+            setTimeout(() => {
+                message.style.opacity = "0";
+                setTimeout(() => message.style.display = "none", 300);
+            }, 1300);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+</script>
+
+
 
     <div class="container">
         <h2>MG Lion Promotion Guidelines</h2>
